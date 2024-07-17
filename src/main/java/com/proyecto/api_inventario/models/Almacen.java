@@ -21,4 +21,7 @@ public class Almacen {
     @Column(name = "cantidad_productos")
     private Integer cantidad_productos;
 
+    @Column(name = "nombre_almacen")
+    private String nombre_almacen;
+
 }

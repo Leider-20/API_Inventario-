@@ -16,8 +16,8 @@ public class Productos {
     @Column(name = "referencia_id")
     private Long referencia_id;
 
-    @Column(name = "nombre")
-    private String nombre;
+    @Column(name = "nombre_producto")
+    private String nombre_producto;
 
     @Column(name = "precio")
     private Integer precio;

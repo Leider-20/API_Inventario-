@@ -1,7 +1,6 @@
 package com.proyecto.api_inventario.services;
 
-import com.proyecto.api_inventario.models.Almacen;
-import com.proyecto.api_inventario.models.Productos;
+import com.proyecto.api_inventario.models.Producto;
 import com.proyecto.api_inventario.repository.ProductosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,19 +12,19 @@ public class ProductosService {
     @Autowired
     private ProductosRepository productosRepository;
 
-    public Productos saveProductos (Productos productos){
-        return productosRepository.save(productos);
+    public Producto saveProductos (Producto producto){
+        return productosRepository.save(producto);
     }
 
-    public List<Productos> getProductos(Productos productos){
+    public List<Producto> getProductosAll(Producto producto){
         return productosRepository.findAll();
     }
 
-    public Optional<Productos> getProductosById(Long id){
+    public Optional<Producto> getProductosById(Long id){
         return productosRepository.findById(id);
     }
 
-    public void deleteProductos(){
+    public void deleteProductosAll(){
         productosRepository.deleteAll();
     }
 

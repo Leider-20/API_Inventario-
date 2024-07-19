@@ -18,7 +18,7 @@ public class AlmacenService {
         return almacenRepository.save(almacen);
     }
 
-    public List<Almacen> getAlmacen(Almacen almacen){
+    public List<Almacen> getAlmacenAll(Almacen almacen){
         return almacenRepository.findAll();
     }
 
@@ -26,7 +26,7 @@ public class AlmacenService {
         return almacenRepository.findById(id);
     }
 
-    public void deleteAlmacen(){
+    public void deleteAlmacenAll(){
          almacenRepository.deleteAll();
     }
 

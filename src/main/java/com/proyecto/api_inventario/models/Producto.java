@@ -17,7 +17,7 @@ import java.util.Set;
 public class Producto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "prod_id")
     private Long prod_id;
 
@@ -34,6 +34,49 @@ public class Producto {
     @JoinColumn(name = "almacen_id")
     private Almacen almacen;
 
+
+
+    // Getter and Setter
+
+    public Long getProd_id() {
+        return prod_id;
+    }
+
+    public void setProd_id(Long prod_id) {
+        this.prod_id = prod_id;
+    }
+
+    public String getNombre_producto() {
+        return nombre_producto;
+    }
+
+    public void setNombre_producto(String nombre_producto) {
+        this.nombre_producto = nombre_producto;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Integer getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Integer precio) {
+        this.precio = precio;
+    }
+
+    public Almacen getAlmacen() {
+        return almacen;
+    }
+
+    public void setAlmacen(Almacen almacen) {
+        this.almacen = almacen;
+    }
 
 
     // TODO poner el nullable y el length en los diferentes atributos de la tabla.

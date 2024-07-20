@@ -3,10 +3,12 @@ package com.proyecto.api_inventario.services;
 import com.proyecto.api_inventario.models.Producto;
 import com.proyecto.api_inventario.repository.ProductosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ProductosService {
 
     @Autowired

@@ -26,7 +26,8 @@ public class Sede {
     @Column(name = "ubicacion")
     private String ubicacion;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sede", cascade = CascadeType.ALL)
+    /** El "cascade = CascadeType.ALL, orphanRemoval = true" es para que cuando se realice alguna operación en la tabla de sedes, se realice la misma operación en la tabla de asociada, la tabla de almacenes. */
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sede", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Almacen> almacenes;
 
 

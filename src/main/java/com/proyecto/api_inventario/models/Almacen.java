@@ -25,12 +25,12 @@ public class Almacen {
     @Column(name = "nombre_almacen")
     private String nombre_almacen;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "almacen", cascade = CascadeType.ALL)
-    private List<Producto> productos;
-
     @ManyToOne
     @JoinColumn(name = "sede_id")  // Toma el atributo/columna con este nombre que está en la tabla con la que se relaciona.
     private Sede sede;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "almacen")
+    private List<Producto> productos;
 
     @Transient  // Usamos esta anotación para los atributos que no se van a mapear/crear como un atributo/columna de la tabla en la base de datos.
     private Long sedeId;

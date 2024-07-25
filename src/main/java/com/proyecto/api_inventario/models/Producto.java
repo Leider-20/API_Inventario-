@@ -30,10 +30,12 @@ public class Producto {
     @Column(name = "precio")
     private Integer precio;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "almacen_id")
+    @ManyToOne
+    @JoinColumn(name = "almacen_id")    // Toma el atributo/columna con este nombre que está en la tabla con la que se relaciona.
     private Almacen almacen;
 
+    @Transient  // Usamos esta anotación para los atributos que no se van a mapear/crear como un atributo/columna de la tabla en la base de datos.
+    private Long almacenId;
 
 
     // Getter and Setter

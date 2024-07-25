@@ -34,4 +34,15 @@ public class SedeService {
         sedeRepository.deleteById(id);
     }
 
+
+    /** @La diferencia entre el método "deleteSedeById" de arriba y el que está aquí abajo es que el de abajo tiene una restricción.
+     * Al intentar borrar una sede si hay almacenes en las tablas de la BD asociados a esta, entonces no se borrará la sede*/
+
+    /*public void deleteSedeById(Long id) {
+        List<Almacen> almacenes = almacenRepository.findBySedeId(id);
+        if (!almacenes.isEmpty()) {
+            throw new DataIntegrityViolationException("No se puede eliminar la sede porque tiene almacenes asociados.");
+        }
+        sedeRepository.deleteById(id);
+    }*/
 }

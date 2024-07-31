@@ -38,6 +38,10 @@ public class Producto {
     private Long almacenId;
 
 
+
+
+
+
     // Getter and Setter
 
     public Long getProd_id() {

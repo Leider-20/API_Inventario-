@@ -26,7 +26,7 @@ public class Sede {
     @Column(name = "ubicacion")
     private String ubicacion;
 
-    /** El "cascade = CascadeType.ALL, orphanRemoval = true" es para que cuando se realice alguna operación en la tabla de sedes, se realice la misma operación en la tabla de asociada, la tabla de almacenes.
+    /** El "cascade = CascadeType.ALL, orphanRemoval = true" es para que cuando se realice alguna operación en la tabla de sedes, se realice la misma operación en la tabla asociada, la tabla de almacenes.
      * Hay que tener en cuenta que esto solo funcionará cuando se hacen peticiones con las operaciones definidas en la API que hicimos aquí en el entorno de spring boot,
      * pero cuando hacemos la misma operación en la base de datos no funciona y surge el error de restricción de integridad. */
 
@@ -34,6 +34,9 @@ public class Sede {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "sede")
     private List<Almacen> almacenes;
+
+
+
 
 
 

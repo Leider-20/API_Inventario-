@@ -35,6 +35,7 @@ public class AlmacenController {
 
     /*public Almacen saveAlmacen(@RequestBody Almacen almacen, @RequestParam Long sedeId) {
         return almacenService.saveAlmacen(almacen, sedeId);
+        //http://localhost:8080/guardar-almacen?sedeId=1
     }*/
 
     @ApiOperation(value = "Método para consultar y obtener todos los almacenes.")
@@ -64,7 +65,7 @@ public class AlmacenController {
                         ", cantidad: " + productosAsociados.get(j).getCantidad() +
                         ", precio: " + productosAsociados.get(j).getPrecio());
             }
-            response.put("almacenes_asociados", datosProducto);
+            response.put("productos_asociados", datosProducto);
             almacenMap.add(response);
         }
         return new ResponseEntity<>(almacenMap, HttpStatus.CREATED);
@@ -94,10 +95,10 @@ public class AlmacenController {
                         ", cantidad: " + productosAsociados.get(i).getCantidad() +
                         ", precio: " + productosAsociados.get(i).getPrecio());
             }
-            response.put("almacenes_asociados", datosProducto);
+            response.put("productos_asociados", datosProducto);
             return new ResponseEntity<>(response, HttpStatus.CREATED);
         }
-        throw new ModelNotFoundException("La sede con ese ID no se encuentra registrada.");
+        throw new ModelNotFoundException("El almacén con ese ID no se encuentra registrado.");
     }
 
     @ApiOperation(value = "Método para borrar todos los almacenes.")

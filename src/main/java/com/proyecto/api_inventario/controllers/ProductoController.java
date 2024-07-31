@@ -41,7 +41,7 @@ public class ProductoController {
         List<Map<String, Object>> productoMap = new ArrayList<>();
 
         if (productoLista.isEmpty()) {
-            throw new ModelNotFoundException("No hay almacenes registrados.");
+            throw new ModelNotFoundException("No hay productos registrados.");
         }
         for (int i = 0; i < productoLista.size(); i++) {
 
@@ -72,7 +72,7 @@ public class ProductoController {
             response.put("almacen_id", producto.get().getAlmacen().getAlmacen_id());
             return new ResponseEntity<>(response, HttpStatus.CREATED);
         }
-        throw new ModelNotFoundException("El almacén con ese ID no se encuentra registrado.");
+        throw new ModelNotFoundException("El producto con ese ID no se encuentra registrado.");
     }
 
     @ApiOperation(value = "Método para borrar todos los productos.")
@@ -85,7 +85,7 @@ public class ProductoController {
             productoService.deleteProductoAll();
             return "Se han borrado todos los productos.";
         }
-        return "No hay productos para borrar";
+        return "No hay productos para borrar.";
     }
 
     @ApiOperation(value = "Método para borrar los productos por su ID.")

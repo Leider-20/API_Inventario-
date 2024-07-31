@@ -32,9 +32,9 @@ public class AlmacenService {
                 almacen.setSede(sede.get());
                 return almacenRepository.save(almacen);
             }
-            new ResponseEntity<>("La sede con ese ID no está registrada.", HttpStatus.CREATED);
+            throw new ModelNotFoundException("La sede con ese ID no está registrada.");
         }
-        throw new ModelNotFoundException("Ingrese el ID de la sede.");
+        throw new NullPointerException("Ingrese el ID de la sede.");
     }
 
     /*

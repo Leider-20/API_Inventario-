@@ -32,10 +32,21 @@ public class ProductoService {
                 producto.setAlmacen(almacen.get());
                 return productosRepository.save(producto);
             }
-            new ResponseEntity<>("El almacén con ese ID no está registrado.", HttpStatus.CREATED);
+            throw new ModelNotFoundException("El almacén con ese ID no está registrado.");
         }
-        throw new ModelNotFoundException("Ingrese el ID del almacén.");
+        throw new NullPointerException("Ingrese el ID del almacén.");
     }
+
+    /*
+    public Producto saveProducto(Producto producto, Long almacenId) {
+        Optional<Almacen> almacen = almacenRepository.findById(almacenId);
+        if (almacen.isPresent()) {
+            producto.setAlmacen(almacen.get());
+            return productosRepository.save(producto);
+        }
+        throw new ModelNotFoundException("La sede con ese ID no registrada.");
+    }
+    */
 
     public List<Producto> getProductoAll(){
         return productosRepository.findAll();

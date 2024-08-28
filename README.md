@@ -1,5 +1,5 @@
 # API_Inventario
-## REST API de un inventario de productos.
+### REST API de un inventario de productos.
 * Backend hecho con:
     * Java
     * SpringBoot
